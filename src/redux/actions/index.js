@@ -1,7 +1,8 @@
 import { LOGIN } from './actions.types'
 
-export const login = () => {
+export const login = (username) => {
     return {
         type: LOGIN,
+        username
     }
 }

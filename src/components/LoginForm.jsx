@@ -1,4 +1,9 @@
-const LoginForm = ({ setUser}) => {
+import { useDispatch } from "react-redux";
+import { login } from "../redux/actions";
+
+const LoginForm = () => {
+    
+    const dispatch = useDispatch()
 
     const onFormSubmit = (e) => {
         e.preventDefault()
@@ -6,10 +11,7 @@ const LoginForm = ({ setUser}) => {
         const password = e.target.elements.password.value;
 
         if(username === "seytech" && password === "123") {
-            setUser({
-                username, 
-                password
-            })
+            dispatch(login(username))
         }
         else {
             alert("Invalid credentials")
