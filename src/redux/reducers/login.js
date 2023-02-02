@@ -1,7 +1,7 @@
-import { LOGIN } from "../actions/actions.types"
+import { LOGIN, LOGOUT } from "../actions/actions.types"
 
 const initialState = {
-    user: "sey"
+    user: null
 }
 
 const login = (state = initialState, action) => {
@@ -12,6 +12,11 @@ const login = (state = initialState, action) => {
                 user: {
                     username: action.username
                 }
+            }
+        case LOGOUT:
+            return {
+                ...state,
+                user: null
             }
         default:
             return state
